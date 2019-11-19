@@ -15,7 +15,7 @@ public class RestDao {
         try {
             count = jdbcTemplate.queryForObject(sqlQuery, Integer.class);
         } catch (NullPointerException e) {
-            return 0;
+            return -1;
         }
 
         String sqlUpdate = "update counter set counter = counter+1 where id = 1";
